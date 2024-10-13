@@ -1,20 +1,20 @@
 <?php
 
-namespace app\controls;
-use app\models\viewsModel;
+	namespace app\controllers;
+	use app\models\viewsModel;
 
-class viewsController extends viewsModel
-{
-	public function getViewsController($views)
+	class viewsController extends viewsModel
 	{
-		if($vista != "")
+		public function getViewsController($views)
 		{
-			$reponse = $this->getViewsModel($views);
-		} else {
-			$response = "login";
+			if($views != "")
+			{
+				$reponse = $this->getViewsModel($views);
+			} else {
+				$response = "login";
+			}
+			return $reponse;
 		}
-		return $reponse;
 	}
-}
 
 ?>
