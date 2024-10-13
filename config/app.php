@@ -4,7 +4,7 @@
 	const APP_NAME="Sistema Administrativo de Condominios"
 	const APP_SESSION_NAME="SAC"
 
-	date_default_timezone_set("");
+	date_default_timezone_set("America/Caracas");
 
 
 ?>
