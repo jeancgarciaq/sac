@@ -1,6 +1,6 @@
 <?php
 /**
-	* La clase Conection esta creada para poder reutilizar la conexión a las bases de datos alojadas en un servidor off-line
+	* La clase ConectionPdo esta creada para poder reutilizar la conexión a las bases de datos alojadas en un servidor off-line
 	* @author Jean Carlo Garcia
  	* @version 1.0
  	* @date 2024-08-03
