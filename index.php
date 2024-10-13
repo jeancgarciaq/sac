@@ -4,7 +4,7 @@
     require_once "autoload.php";
 
     /*---------- Iniciando sesion ----------*/
-    //require_once "./app/views/inc/session_start.php";
+    require_once "app/views/inc/session_start.php";
 
     if(isset($_GET['views'])){
         $url=explode("/", $_GET['views']);
