@@ -1,41 +1,50 @@
 <?php
-//Esta linea se incluye cuando vamos a usar las clases
-//require_once "autoload.php"
 
-//Marca el in(icio de sesión
-require "Scripts/session_start.php";
+    require_once "config/app.php";
+    require_once "autoload.php";
+
+    /*---------- Iniciando sesion ----------*/
+    //require_once "./app/views/inc/session_start.php";
+
+    if(isset($_GET['views'])){
+        $url=explode("/", $_GET['views']);
+    }else{
+        $url=["login"];
+    }
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <?php include_once "Inc/head.php"; ?>
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <?php
+<html lang="es">
+<head>
+    <?php require_once "app/views/inc/head.php"; ?>
+</head>
+<body>
+    <?php
+        /*use app\controllers\viewsController;
+        use app\controllers\loginController;
 
-      //Vamos a evaluar que vista cargar
-      if(!isset($_GET['views']) || $_GET['views'] == "") {
-        $_GET['views'] = 'login';
-      }
+        $insLogin = new loginController();
 
-      //Comprobación de la vistas activas
-      if(is_file("Views/".$_GET['views'].".php") && $_GET['views'] != 'login' && $_GET['views'] != '404'){
+        $viewsController= new viewsController();
+        $vista=$viewsController->obtenerVistasControlador($url[0]);
 
-          include_once "Inc/navbar.php";
-          include_once "Views/".$_GET['views'].".php";
-          echo "</div>";
-          echo "</section>";
-          echo "<script src='Scripts/navbar.js'></script>";
-      } else {
-        if($_GET['views'] == 'login') {
-          include "Views/login.php";
-        }else {
-          include "Views/404.php";
-        }
-      }
-      ?>
-  </body>
+        if($vista=="login" || $vista=="404"){
+            require_once "./app/views/content/".$vista."-view.php";
+        }else{
+
+            # Cerrar sesion #
+            if((!isset($_SESSION['id']) || $_SESSION['id']=="") || (!isset($_SESSION['usuario']) || $_SESSION['usuario']=="")){
+                $insLogin->cerrarSesionControlador();
+                exit();
+            }
+
+            require_once "./app/views/inc/navbar.php";
+
+            require_once $vista;
+        }*/
+
+        require_once "app/views/inc/script.php";
+    ?>
+</body>
 </html>
