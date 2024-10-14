@@ -41,6 +41,11 @@ class ownerModel
 
 	public function addUser(string $newName, string $newPhone, string $newEmail) 
 	{
+		
+		$newName = $this->clearVariable($newName);
+		$newPhone = $this->clearVariable($newPhone);
+		$newEmail = $this->clearVariable($newEmail);
+
 		$owner = new Owner();
 		$owner->setName = $newName;
 		$owner->setPhone = $newPhone;
@@ -80,10 +85,10 @@ class ownerModel
 
 	public function updateOwner(string $newName, string $newPhone, string $newEmail, int $newId)
 	{
-		$id = $newId;
-		$name = $newName;
-		$email = $newEmail;
-		$phone = $newPhone;
+		$id = $this->clearVariable($newId);
+		$name = $this->clearVariable($newName);
+		$email = $this->clearVariable($newEmail);
+		$phone = $this->clearVariable($newPhone);
 
 		$owner = $entityManager->find('Owner', $id);
 
