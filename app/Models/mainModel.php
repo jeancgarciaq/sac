@@ -7,10 +7,17 @@ require_once "app/config/bootstrap";
 class mainModel
 {
 	//Pendiente definir los atributos
+	private string $chain;
+	private string $filter;
 
-	//Conexion
-	protected function connection() {
-		return $entityManager;
+	public function setChain(string $chain) 
+	{
+		$this->chain = $chain;
+	}
+
+	public function setFilter(string $filter)
+	{
+		$this->filter = $filter;
 	}
 
 	/*----------  Funcion limpiar cadenas  ----------*/
