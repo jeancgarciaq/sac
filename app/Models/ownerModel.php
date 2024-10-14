@@ -1,7 +1,9 @@
 <?php 
 
 namespace app\models;
+
 use app\models\mainModel;
+require_once "app/config/bootstrap.php";
 
 class ownerModel
 {		
