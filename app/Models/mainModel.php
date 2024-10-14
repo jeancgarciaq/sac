@@ -14,27 +14,27 @@ class mainModel
 	}
 
 	/*----------  Funcion limpiar cadenas  ----------*/
-	public function limpiarCadena($cadena){
+	public function clearVariable($chain){
 
-		$palabras=["<script>","</script>","<script src","<script type=","SELECT * FROM","SELECT "," SELECT ","DELETE FROM","INSERT INTO","DROP TABLE","DROP DATABASE","TRUNCATE TABLE","SHOW TABLES","SHOW DATABASES","<?php","?>","--","^","<",">","==","=",";","::"];
+		$words=["<script>","</script>","<script src","<script type=","SELECT * FROM","SELECT "," SELECT ","DELETE FROM","INSERT INTO","DROP TABLE","DROP DATABASE","TRUNCATE TABLE","SHOW TABLES","SHOW DATABASES","<?php","?>","--","^","<",">","==","=",";","::"];
 
-		$cadena=trim($cadena);
-		$cadena=stripslashes($cadena);
+		$chain=trim($chain);
+		$chain=stripslashes($chain);
 
-		foreach($palabras as $palabra){
-			$cadena=str_ireplace($palabra, "", $cadena);
+		foreach($words as $word){
+			$chain=str_ireplace($word, "", $chain);
 		}
 
-		$cadena=trim($cadena);
-		$cadena=stripslashes($cadena);
+		$chain=trim($chain);
+		$chain=stripslashes($chain);
 
-		return $cadena;
+		return $chain;
 	}
 
 
 	/*---------- Funcion verificar datos (expresion regular) ----------*/
-	protected function verificarDatos($filtro, $cadena){
-		if(preg_match("/^".$filtro."$/", $cadena))
+	protected function verifyData($filter, $chain){
+		if(preg_match("/^".$filter."$/", $chain))
 		{
 			return false;
         } else {
