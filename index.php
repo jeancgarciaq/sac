@@ -31,7 +31,7 @@
 
         if($views == "login" || $views == "404") 
         {
-            require_once "./app/views/content/".$views."-view.php";
+            require_once "app/views/content/".$views."-view.php";
         } else { 
 
             # Cerrar sesion #
@@ -40,7 +40,7 @@
                 exit();
             }*/
 
-            //require_once "./app/views/inc/navbar.php";
+            require_once "app/views/inc/navbar.php";
 
             require_once $views;
         }
