@@ -7,40 +7,7 @@ require_once "app/config/bootstrap.php";
 
 class ownerModel
 {		
-	private string $newName;
-	private string $newPhone;
-	private string $newEmail;
-	private int $newId;
-
-	public function setName(string $name) {
-		$this->newName = $newName;
-	}
-
-	public function getNewName(string $phone)
-	{
-		return $this->newName;
-	}
-
-	public function setPhone(string $phone)
-	{
-		$this->newPhone = $newPhone;
-	}
-
-	public function getNewPhone(): string
-	{
-		return $this->newPhone
-	}
-
-	public function setNewEmail(string $email)
-	{
-		$this->newEmail = $newEmail;
-	}
-
-	public function getNewEmail(): string
-	{
-		return $this->newEmail
-	}
-
+	
 	public function addUser(string $newName, string $newPhone, string $newEmail) 
 	{
 		
@@ -72,6 +39,7 @@ class ownerModel
 
 	public function searchOwnerId(int $newId)
 	{
+		$newId = $this->clearVariable($newId);
 		$id = $newId;
 
 		$owner = $entityManager->find('Owner', $id);
